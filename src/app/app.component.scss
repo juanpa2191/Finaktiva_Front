@@ -1,0 +1,62 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.welcome-card {
+  margin-bottom: 24px;
+}
+
+.actions-section {
+  margin: 24px 0;
+  
+  h2 {
+    margin-bottom: 16px;
+    color: #333;
+  }
+}
+
+.button-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  
+  button {
+    min-width: 120px;
+  }
+}
+
+mat-card-actions {
+  padding: 16px;
+}
+
+mat-expansion-panel {
+  margin-top: 24px;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .content {
+    padding: 16px;
+  }
+  
+  .button-row {
+    flex-direction: column;
+    
+    button {
+      width: 100%;
+    }
+  }
+}
