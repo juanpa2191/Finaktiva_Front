@@ -32,9 +32,8 @@ export const selectEventLogsByType = createSelector(
   selectAllEventLogs,
   (eventLogs) => {
     return {
-      info: eventLogs.filter(log => log.tipo === 1).length,
-      warning: eventLogs.filter(log => log.tipo === 2).length,
-      error: eventLogs.filter(log => log.tipo === 3).length
+      api: eventLogs.filter(log => log.tipo === 1).length,
+      manual: eventLogs.filter(log => log.tipo === 2).length
     };
   }
 );

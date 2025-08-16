@@ -3,7 +3,7 @@
   <mat-card class="stats-card">
     <mat-card-header>
       <mat-card-title>Gestión de Logs de Eventos</mat-card-title>
-      <mat-card-subtitle>API de EventLogs con NgRx y Angular Material</mat-card-subtitle>
+      <mat-card-subtitle>API de EventLogs - Logs de API y Manual con NgRx y Angular Material</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="stats-grid">
@@ -12,16 +12,12 @@
           <span class="stat-label">Total de Logs</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number info">{{ (eventLogsByType$ | async)?.info || 0 }}</span>
-          <span class="stat-label">Información</span>
+          <span class="stat-number info">{{ (eventLogsByType$ | async)?.api || 0 }}</span>
+          <span class="stat-label">API</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number warning">{{ (eventLogsByType$ | async)?.warning || 0 }}</span>
-          <span class="stat-label">Advertencias</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number error">{{ (eventLogsByType$ | async)?.error || 0 }}</span>
-          <span class="stat-label">Errores</span>
+          <span class="stat-number warning">{{ (eventLogsByType$ | async)?.manual || 0 }}</span>
+          <span class="stat-label">Manual</span>
         </div>
       </div>
     </mat-card-content>

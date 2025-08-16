@@ -18,13 +18,11 @@ export interface EventLogState {
 }
 
 export enum EventLogType {
-  Info = 1,
-  Warning = 2,
-  Error = 3
+  Api = 1,
+  Manual = 2
 }
 
 export const EventLogTypeLabels: Record<EventLogType, string> = {
-  [EventLogType.Info]: 'Información',
-  [EventLogType.Warning]: 'Advertencia',
-  [EventLogType.Error]: 'Error'
+  [EventLogType.Api]: 'API',
+  [EventLogType.Manual]: 'Manual'
 }; 

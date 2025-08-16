@@ -52,7 +52,7 @@ export class EventLogManagerComponent implements OnInit, OnDestroy {
   error$: Observable<string | null>;
   success$: Observable<string | null>;
   eventLogsCount$: Observable<number>;
-  eventLogsByType$: Observable<{ info: number; warning: number; error: number }>;
+  eventLogsByType$: Observable<{ api: number; manual: number }>;
   eventLogsForTable$: Observable<EventLog[]>;
 
   eventLogForm: FormGroup;
@@ -83,7 +83,7 @@ export class EventLogManagerComponent implements OnInit, OnDestroy {
 
     this.eventLogForm = this.fb.group({
       descripcion: ['', [Validators.required, Validators.minLength(3)]],
-      tipo: [EventLogType.Info, Validators.required]
+      tipo: [EventLogType.Api, Validators.required]
     });
   }
 
@@ -132,15 +132,14 @@ export class EventLogManagerComponent implements OnInit, OnDestroy {
   resetForm(): void {
     this.eventLogForm.reset({
       descripcion: '',
-      tipo: EventLogType.Info
+      tipo: EventLogType.Api
     });
   }
 
   getTypeColor(tipo: number): string {
     switch (tipo) {
-      case EventLogType.Info: return 'primary';
-      case EventLogType.Warning: return 'accent';
-      case EventLogType.Error: return 'warn';
+      case EventLogType.Api: return 'primary';
+      case EventLogType.Manual: return 'accent';
       default: return 'primary';
     }
   }
